@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <div className='h-screen flex flex-col md:flex-row gap-4 p-5'>
-        <div className='canvasWrapper w-full aspect-square outline-dashed'>
+        <div className='canvasWrapper w-full aspect-square outline outline-1 outline-slate-500'>
           <ThreeJs />
         </div>
         <div className='UI_wrapper w-full  '>
