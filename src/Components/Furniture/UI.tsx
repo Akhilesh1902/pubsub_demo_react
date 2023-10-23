@@ -1,18 +1,27 @@
-import { useAppContext } from '../../Context/AppContext';
 import { Color } from 'three';
-import { useLightContext } from '../../Context/lightContext';
+import useLightStore from '../../store/LightStore';
+import useAppStore from '../../store/AppStore';
 
 export default function UI() {
+  // const {
+  //   isLightActive,
+  //   setLightActive,
+  //   lightColor,
+  //   lightIntensity,
+  //   setIntensity,
+  //   setColor,
+  // } = useLightContext();
+
   const {
     isLightActive,
-    setLightActive,
     lightColor,
     lightIntensity,
-    setIntensity,
     setColor,
-  } = useLightContext();
-
-  const { isDay } = useAppContext();
+    setIntensity,
+    setLightActive,
+  } = useLightStore();
+  // console.log(store);
+  const { isDay } = useAppStore();
 
   return (
     <div className='flex flex-col gap-3 my-3'>

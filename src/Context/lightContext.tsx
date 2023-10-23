@@ -11,7 +11,7 @@ function createCtx<ContextType>() {
   return [useCtx, ctx.Provider] as const;
 }
 
-export type AppContext = {
+export type LightContext = {
   isLightActive: boolean;
   lightIntensity: number;
   lightColor: THREE.Color;
@@ -20,7 +20,7 @@ export type AppContext = {
   setColor: (val: THREE.Color) => void;
 };
 
-const [useLightContext, CtxProvider] = createCtx<AppContext>();
+const [useLightContext, CtxProvider] = createCtx<LightContext>();
 
 type Props = {
   children: React.ReactNode;
