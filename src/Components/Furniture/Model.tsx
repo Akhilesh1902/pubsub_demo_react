@@ -25,20 +25,20 @@ export default function Model() {
   const { scene, camera } = useThree();
 
   const model = useGLTF(
-    'https://d3t7cnf9sa42u5.cloudfront.net/compressed_models/Tables/Table_Automatic_01_v01.glb'
+    'https://d3t7cnf9sa42u5.cloudfront.net/compressed_models/Tables/Table_Manual_01.glb'
   );
-
+  console.log(model);
   const light = model.scene.getObjectByName(
     'Desktop_Lamp_Light002'
   ) as PointLight;
   const lamp = model.scene.getObjectByName('Lamp0_Selectable') as Group;
 
   light.castShadow = true;
-  model.scene.traverse((i) => {
+  model.scene.traverse((item) => {
     // console.log(i);
-    if (i.isMesh) {
-      i.castShadow = true;
-      i.receiveShadow = true;
+    if (item.isMesh) {
+      item.castShadow = true;
+      item.receiveShadow = true;
     }
   });
 
